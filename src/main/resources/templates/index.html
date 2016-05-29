@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>My将棋</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="/css/style.css" th:href="@{/css/style.css}" rel="stylesheet"/>
+<script src="webjars/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/javascript/common.js" th:src="@{/javascript/common.js}"></script>
+</head>
+<body>
+	<h1>My将棋 〜クラウド棋譜管理サービス〜</h1>
+	<div id="boardGUI">
+		<h2>GUI盤面操作</h2>
+		<div id="boardWrapper">
+			<div class="boardParts" id="boardWhole">
+				<div class="boardParts" id="boardLeft">
+					<table class="boardPieceStand" id="boardStandWhite">
+						<tr>
+							<td class="boardHandedPiece" id="boardStand9"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand9w"></div></div></td>
+							<td class="boardHandedPiece" id="boardStand8"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand8w"></div></div></td>
+							<td class="boardHandedPiece" id="boardStand7"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand7w"><img class="piece6w" src="/img/piece6.png" /><p class="pieceCountW">15</p></div></div></td>
+						</tr>
+						<tr>
+							<td class="boardHandedPiece" id="boardStand6"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand6w"><img class="piece5w" src="/img/piece5.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand5"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand5w"><img class="piece4w" src="/img/piece4.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand4"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand4w"><img class="piece3w" src="/img/piece3.png" /></div></div></td>
+						</tr>
+						<tr>
+							<td class="boardHandedPiece" id="boardStand3"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand3w"><img class="piece2w" src="/img/piece2.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand2"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand2w"><img class="piece8w" src="/img/piece8.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand1"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand1w"><img class="piece7w" src="/img/piece7.png" /><p class="pieceCountW">2</p></div></div></td>
+						</tr>
+					</table>
+				</div>
+				<div class="boardParts" id="boardMain">
+					<table class="boardPiece" id="board81">
+						<tr class="boardRow" id="boardRow0">
+							<td class="boardHeader">9</td>
+							<td class="boardHeader">8</td>
+							<td class="boardHeader">7</td>
+							<td class="boardHeader">6</td>
+							<td class="boardHeader">5</td>
+							<td class="boardHeader">4</td>
+							<td class="boardHeader">3</td>
+							<td class="boardHeader">2</td>
+							<td class="boardHeader">1</td>
+							<td class="boardRighter"></td>
+						</tr>
+						<tr class="boardRow" id="boardRow1">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell11"><img class="piece5w" src="/img/piece5.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell12"><img class="piece4w" src="/img/piece4.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell13"><img class="piece3w" src="/img/piece3.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell14"><img class="piece2w" src="/img/piece2.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell15"><img class="piece1w" src="/img/piece1.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell16"><img class="piece2w" src="/img/piece2.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell17"><img class="piece3w" src="/img/piece3.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell18"><img class="piece4w" src="/img/piece4.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell19"><img class="piece5w" src="/img/piece5.png" /></div></div></td>
+							<td class="boardRighter">一</td>
+						</tr>
+						<tr class="boardRow" id="boardRow2">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell21"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell22"><img class="piece7w" src="/img/piece7.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell23"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell24"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell25"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell26"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell27"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell28"><img class="piece8w" src="/img/piece8.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell29"></div></div></td>
+							<td class="boardRighter">二</td>
+						</tr>
+						<tr class="boardRow" id="boardRow3">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell31"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell32"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell33"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell34"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell35"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell36"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell37"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell38"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell39"><img class="piece6w" src="/img/piece6.png" /></div></div></td>
+							<td class="boardRighter">三</td>
+						</tr>
+						<tr class="boardRow" id="boardRow4">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell41"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell42"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell43"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell44"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell45"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell46"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell47"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell48"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell49"></div></div></td>
+							<td class="boardRighter">四</td>
+						</tr>
+						<tr class="boardRow" id="boardRow5">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell51"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell52"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell53"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell54"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell55"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell56"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell57"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell58"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell59"></div></div></td>
+							<td class="boardRighter">五</td>
+						</tr>
+						<tr class="boardRow" id="boardRow6">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell61"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell62"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell63"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell64"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell65"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell66"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell67"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell68"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell69"></div></div></td>
+							<td class="boardRighter">六</td>
+						</tr>
+						<tr class="boardRow" id="boardRow7">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell71"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell72"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell73"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell74"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell75"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell76"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell77"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell78"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell79"><img class="piece6" src="/img/piece6.png" /></div></div></td>
+							<td class="boardRighter">七</td>
+						</tr>
+						<tr class="boardRow" id="boardRow8">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell81"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell82"><img class="piece7" src="/img/piece8.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell83"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell84"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell85"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell86"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell87"></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell88"><img class="piece7" src="/img/piece7.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell89"></div></div></td>
+							<td class="boardRighter">八</td>
+						</tr>
+						<tr class="boardRow" id="boardRow9">
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell91"><img class="piece5" src="/img/piece5.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell92"><img class="piece4" src="/img/piece4.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell93"><img class="piece3" src="/img/piece3.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell94"><img class="piece2" src="/img/piece2.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell95"><img class="piece1" src="/img/piece1.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell96"><img class="piece2" src="/img/piece2.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell97"><img class="piece3" src="/img/piece3.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell98"><img class="piece4" src="/img/piece4.png" /></div></div></td>
+							<td class="boardCell"><div class="boardCellContentWrapper"><div class="boardCellContent" id="boardCell99"><img class="piece5" src="/img/piece5.png" /></div></div></td>
+							<td class="boardRighter">九</td>
+						</tr>
+					</table>
+				</div>
+				<div class="boardParts" id="boardRight">
+					<table class="boardPieceStand" id="boardStandBlack">
+						<tr>
+							<td class="boardHandedPiece" id="boardStand9"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand1"><img class="piece7" src="/img/piece7.png" /><p class="pieceCount">2</p></div></div></td>
+							<td class="boardHandedPiece" id="boardStand8"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand2"><img class="piece8" src="/img/piece8.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand7"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand3"><img class="piece2" src="/img/piece2.png" /></div></div></td>
+						</tr>
+						<tr>
+							<td class="boardHandedPiece" id="boardStand6"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand4"><img class="piece3" src="/img/piece3.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand5"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand5"><img class="piece4" src="/img/piece4.png" /></div></div></td>
+							<td class="boardHandedPiece" id="boardStand4"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand6"><img class="piece5" src="/img/piece5.png" /></div></div></td>
+						</tr>
+						<tr>
+							<td class="boardHandedPiece" id="boardStand3"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand7"><img class="piece6" src="/img/piece6.png" /><p class="pieceCount">15</p></div></div></td>
+							<td class="boardHandedPiece" id="boardStand2"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand8"></div></div></td>
+							<td class="boardHandedPiece" id="boardStand1"><div class="boardStandCellWrapper"><div class="boardStandCell" id="boardStand9"></div></div></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="kifInput">
+		<h2>kif形式からの棋譜入力</h2>
+		<form action="/" method="post" name="kif_kifu">
+			<p>
+				<textarea name="kif_text" cols="100" rows="10"></textarea>
+			</p>
+			<p>
+				<input type="submit" value="棋譜送信" />
+				<input type="reset" value="リセット" />
+			</p>
+		</form>
+		<p th:text="${json_kifu}"></p>
+	</div>
+</body>
+</html>

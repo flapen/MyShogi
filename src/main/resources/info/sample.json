@@ -1,0 +1,29 @@
+[
+	{
+		"StartDate":"2016/05/11 23:31:12",
+		"MatchField":{
+			"Name":"将棋ウォーズ",
+			"Type":"10切"
+		},
+		"AllottedTime":{
+			"TotalTime":600,
+			"CountdownTime":0,
+			"IgnoredTime":0,
+			"MaxOneTime":0
+		},
+		"BlackLostPieces":[
+			{"PosX":2, "PosY":8},
+			{"PosX":8, "PosY":8}
+		],
+		"Player":{
+			"Black":"imachu",
+			"White":"flapen"
+		},
+		"Move":[
+			{"Count":1, "PieceType":6, "BeforePosX":7, "BeforePosY":7, "AfterPosX":7, "AfterPosY":6, "LostTime":1, "Evolution":true, "Comment":"初手"},
+			{"Count":2, "PieceType":6, "BeforePosX":3, "BeforePosY":3, "AfterPosX":3, "AfterPosY":4, "LostTime":1, "Comment":"応手"},
+			{"Count":3, "PieceType":99, "LostTime":10}
+		],
+		"Result":{"Winner":"Black", "Type":"Surrender(or Foul,TimeOut)"}
+	}
+]
